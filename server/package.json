@@ -1,0 +1,20 @@
+{
+  "name": "esamefebbraio",
+  "version": "1.0.0",
+  "description": "Esame di Ingegneria del Software 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "web": "server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namron12/SE2Lab_Exam_2017_02.git"
+  },
+  "author": "norman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/namron12/SE2Lab_Exam_2017_02/issues"
+  },
+  "homepage": "https://github.com/namron12/SE2Lab_Exam_2017_02#readme"
+}
