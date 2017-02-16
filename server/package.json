@@ -2,7 +2,7 @@
   "name": "esamefebbraio",
   "version": "1.0.0",
   "description": "Esame di Ingegneria del Software 2",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js"
