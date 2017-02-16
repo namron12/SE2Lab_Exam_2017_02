@@ -255,7 +255,39 @@ var restockItem = function restockItem(item)
     
 }
 
+
+
+
 //ADD YOUR CODE BELOW THIS COMMENT, IF IT IS POSSIBLE
+var sales = function sales(year, discount)
+{
+    
+	if (0 <= discount <=100)
+	{
+        
+        var scontati = [];
+    
+        for (i=0; i < warehouse.length; i++) {
+		
+            warehouse[i].price = (warehouse[i].price/100) * discount; 
+			scontati.push(warehouse[i]);
+		
+    }
+    
+    //ritorna l'array aggiornato
+    return scontati;
+        
+	}
+	else
+    {
+        return null;
+    }
+    
+}
+
+
+
+
 
 //export functions
 exports.getWarehouse = getWarehouse; 

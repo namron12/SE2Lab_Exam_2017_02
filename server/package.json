@@ -19,6 +19,7 @@
   "homepage": "https://github.com/namron12/SE2Lab_Exam_2017_02#readme",
   "dependencies": {
     "bind": "^0.1.7",
+    "body-parser": "^1.16.1",
     "cors": "^2.8.1",
     "express": "^4.14.1",
     "util": "^0.10.3"

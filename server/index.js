@@ -272,7 +272,75 @@ app.post('/restockItem', function(request, response)
 
 });
 
+
+
+
 //ADD YOUR CODE BELOW THIS COMMENT, IF IT IS POSSIBLE
+app.post('/sales', function(request, response) 
+{	
+	var headers = {};
+	headers["Access-Control-Allow-Origin"] = "*";
+	headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+	headers["Access-Control-Allow-Credentials"] = false;
+	headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+	headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+	headers["Content-Type"] = "application/json";
+
+    var itemSeason;
+    var itemPrice;
+    
+	//check body and parameters
+	if ( typeof request.body !== 'undefined' && request.body)
+	{
+		if (
+             typeof request.body.season !== 'undefined' && request.body.season &&
+             typeof request.body.price !== 'undefined' && request.body.price
+		   )
+            {
+             itemSeason = parseFloat(request.body.season);
+             itemPrice = parseFloat(request.body.price);
+            }
+		else 
+			itemID = "undefined";
+	}
+	else
+	{
+		itemID = "body undefined";
+	}
+    
+    if (itemID!="undefined" && itemID!="body undefined")
+	{
+		//aceptable input
+		//create the item
+		var item =  
+            {
+                season: itemSeason,
+                price: itemPrice
+            };
+		
+		//if insertion works correctly
+		if (shopManager.restockItem(item))
+		{
+			response.writeHead(200, headers);
+			response.end(JSON.stringify(item));
+		}
+		else
+		{
+			response.writeHead(400, headers);
+			response.end(JSON.stringify());
+		}
+
+	}
+    else    
+	{
+		//unaceptable input
+		response.writeHead(406, headers);
+		response.end(JSON.stringify("1"));
+	}   
+
+});
+
+
 
 
 app.listen(app.get('port'), function() {
